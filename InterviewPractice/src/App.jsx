@@ -1,13 +1,14 @@
-import { useState } from 'react'
+
 import './App.css'
-import Chips from './components/chips/Chips'
+import Accordian from './components/accordian/Accordian'
+import { items } from './assets/utilities'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <Chips/>
+      <Accordian items={items}/>
     </>
   )
 }
