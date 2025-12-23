@@ -1,36 +1,21 @@
 import React, { useState } from 'react'
+import { items } from '../../assets/utilities'
 
-
-const Accordian = ({items}) => {
-  
-  const [openIndex,setOpenIndex]=useState(null);
-  const handleAccordian=(index)=>{
-
-    if(index===openIndex){
-      setOpenIndex(null)
-    }else{
-      setOpenIndex(index)
-    }
+const Accordian = () => {
+  const[selectedIndex,setSelectedIndex]=useState(null)
+  const handleClick=(index)=>{
+    if(index===selectedIndex) setSelectedIndex(null)
+    else setSelectedIndex(index)
   }
 
-
-
-  return (
-    <div className='container'>
-    {items?(
-      <div className='outside'>
-          {items.map((item,index)=><div className='inside' key={index} style={{margin:"10px", border: "2px solid black"}}>
-              <div onClick={()=>handleAccordian(index)} style={{backgroundColor:"gray", display:'flex', justifyContent:"center", padding:"0", cursor:"pointer"}}>
-                <h4 style={{padding:"1px",margin:"0"}}>{item.title} 🔻</h4>
-              </div>
-              <div style={{backgroundColor:"lightgray", display:openIndex===index?"flex":"none", justifyContent:"center", padding:"0"}}>
-                <p style={{padding:"1px",margin:"0"}}>{item.content}</p>
-              </div>
-          </div>)}
+return <div>
+  <h1>Accordian</h1>
+    {items&&items.map((item,index)=><div style={{margin:"10px"}} key={index} >
+      <div style={{border:"2px solid white", width:"50%",padding:"1% 5%",display:"flex", justifyContent:"space-between", cursor:"pointer"}} onClick={()=>handleClick(index)} >
+        <h4 style={{margin:"0"}}>{item.title}</h4><span style={{marginTop:"0"}}>🔻</span>
       </div>
-  ):(<h1>No items available</h1>)}
-    </div>
-  )
+        {index===selectedIndex&&<p style={{border:"2px solid white", borderTop:"0", width:"50%", margin:0 ,padding:"1% 5%"}}>{item.content}</p>}
+    </div>)}
+</div>
 }
-
 export default Accordian

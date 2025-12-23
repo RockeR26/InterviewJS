@@ -1,0 +1,82 @@
+.inner{
+    background-color: green;
+    text-align: right;
+    transition: 0.5s ease-in;
+}
+
+.outer{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px 0;
+    overflow: hidden;
+
+}
+
+.container{
+    margin-top: 50px;
+    display: flex;
+    justify-content:left; 
+    flex-wrap: wrap; 
+    gap: 20px;  
+}
+
+.item{
+    border:1px solid black;
+    text-align: center;
+    width: 20%;
+    margin: 5px;
+
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+
+.pageNo{
+    border:1px solid black;
+    margin: 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.bg{
+    background-color: blue;
+}
+
+.search-container{
+    margin: 5px;
+    width: 80%;
+}
+
+.search-input{
+    width: 50%;
+    padding: 5px;
+}
+
+.search-button{
+    width: 10%;
+    padding: 5px;
+    margin: 5px
+}
+
+.result-container{
+    max-height: 300px;
+    margin: 5px;
+    border: 1px solid white;
+    width: 40%;
+    padding: 5px;
+    overflow-y: scroll;
+}
+
+.result{
+    display: block;
+}
+.result:hover{
+    cursor: pointer;
+    background-color: slategray;
+}
+
+.main{
+    margin: auto auto;
+}
