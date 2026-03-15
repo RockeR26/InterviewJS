@@ -12,6 +12,7 @@ const Pagination = () => {
         const res=await fetch('https://dummyjson.com/products?limit=0')
         const data= await res.json();
         setProducts(data.products);
+        
     }
     const totalpages=Math.ceil(products.length/pageSize)
     const pagesArray=[...Array(totalpages).keys()]
